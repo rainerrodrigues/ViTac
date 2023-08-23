@@ -1,0 +1,93 @@
+<?xml version="1.0" ?> 
+
+<robot name="gelsight_sensor"> 
+
+   <!-- Defined the link for the base of the sensor --> 
+
+  <link name="base_link"> 
+
+    <!-- Adding visual properties for the base --> 
+
+    <visual> 
+
+      <geometry> 
+
+        <box size="0.1 0.1 0.02" /> 
+
+      </geometry> 
+
+      <material name="white"> 
+
+        <color rgba="1 1 1 1"/> 
+
+      </material> 
+
+    </visual> 
+
+    <!-- Add collision properties for the base --> 
+
+    <collision> 
+
+      <geometry> 
+
+        <box size="0.1 0.1 0.02" /> 
+
+      </geometry> 
+
+    </collision> 
+
+  </link> 
+
+   <!-- Defining the link for the GelSight part --> 
+
+  <link name="gelsight_link"> 
+
+    <!-- Adding visual properties for the GelSight --> 
+
+    <visual> 
+
+      <geometry> 
+
+        <!-- Specifying the visual properties of the GelSight --> 
+
+      </geometry> 
+
+      <material name="blue"> 
+
+        <color rgba="0 0 1 1"/> 
+
+      </material> 
+
+    </visual> 
+
+    <!-- Adding collision properties for the GelSight --> 
+
+    <collision> 
+
+      <geometry> 
+
+        <!-- Specify the collision properties of the GelSight --> 
+
+      </geometry> 
+
+    </collision> 
+
+  </link> 
+
+   <!-- Defining the joint connecting the base and the GelSight --> 
+
+  <joint name="gelsight_joint" type="fixed"> 
+
+    <parent link="base_link"/> 
+
+    <child link="gelsight_link"/> 
+
+    <!-- Specifying the joint's origin and axis --> 
+
+    <origin rpy="0 0 0" xyz="0 0 0"/> 
+
+    <axis xyz="0 0 1"/> 
+
+  </joint> 
+
+ </robot> 
